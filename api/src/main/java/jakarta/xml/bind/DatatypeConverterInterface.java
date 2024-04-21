@@ -195,15 +195,15 @@ public interface DatatypeConverterInterface {
                                          javax.xml.namespace.NamespaceContext nsc);
 
     /**
-     * Converts the string argument into a Calendar value.
+     * Converts the string argument into a ZonedDateTime value.
      * @param lexicalXSDDateTime
      *     A string containing lexical representation of
      *     xsd:datetime.
      * @return
-     *     A Calendar object represented by the string argument.
+     *     A ZonedDateTime object represented by the string argument.
      * @throws IllegalArgumentException if string parameter does not conform to lexical value space defined in XML Schema Part 2: Datatypes for xsd:dateTime.
      */
-    java.util.Calendar parseDateTime(String lexicalXSDDateTime);
+    java.time.ZonedDateTime parseDateTime(String lexicalXSDDateTime);
 
     /**
      * Converts the string argument into an array of bytes.
@@ -250,26 +250,26 @@ public interface DatatypeConverterInterface {
     int parseUnsignedShort(String lexicalXSDUnsignedShort);
 
     /**
-     * Converts the string argument into a Calendar value.
+     * Converts the string argument into a ZonedDateTime value.
      * @param lexicalXSDTime
      *     A string containing lexical representation of
      *     xsd:Time.
      * @return
-     *     A Calendar value represented by the string argument.
+     *     A ZonedDateTime value represented by the string argument.
      * @throws IllegalArgumentException if string parameter does not conform to lexical value space defined in XML Schema Part 2: Datatypes for xsd:Time.
      */
-    java.util.Calendar parseTime(String lexicalXSDTime);
+    java.time.ZonedDateTime parseTime(String lexicalXSDTime);
 
     /**
-     * Converts the string argument into a Calendar value.
+     * Converts the string argument into a ZonedDateTime value.
      * @param lexicalXSDDate
      *     A string containing lexical representation of
      *     xsd:Date.
      * @return
-     *     A Calendar value represented by the string argument.
+     *     A ZonedDateTime value represented by the string argument.
      * @throws IllegalArgumentException if string parameter does not conform to lexical value space defined in XML Schema Part 2: Datatypes for xsd:Date.
      */
-    java.util.Calendar parseDate(String lexicalXSDDate);
+    java.time.ZonedDateTime parseDate(String lexicalXSDDate);
 
     /**
      * Return a string containing the lexical representation of the
@@ -391,14 +391,14 @@ public interface DatatypeConverterInterface {
                       javax.xml.namespace.NamespaceContext nsc);
 
     /**
-     * Converts a Calendar value into a string.
+     * Converts a ZonedDateTime value into a string.
      * @param val
-     *     A Calendar value
+     *     A ZonedDateTime value
      * @return
      *     A string containing a lexical representation of xsd:dateTime
      * @throws IllegalArgumentException if {@code val} is null.
      */
-    String printDateTime(java.util.Calendar val);
+    String printDateTime(java.time.ZonedDateTime val);
 
     /**
      * Converts an array of bytes into a string.
@@ -439,24 +439,24 @@ public interface DatatypeConverterInterface {
     String printUnsignedShort(int val);
 
     /**
-     * Converts a Calendar value into a string.
+     * Converts a ZonedDateTime value into a string.
      * @param val
-     *     A Calendar value
+     *     A ZonedDateTime value
      * @return
      *     A string containing a lexical representation of xsd:time
      * @throws IllegalArgumentException if {@code val} is null.
      */
-    String printTime(java.util.Calendar val);
+    String printTime(java.time.ZonedDateTime val);
 
     /**
-     * Converts a Calendar value into a string.
+     * Converts a ZonedDateTime value into a string.
      * @param val
-     *     A Calendar value
+     *     A ZonedDateTime value
      * @return
      *     A string containing a lexical representation of xsd:date
      * @throws IllegalArgumentException if {@code val} is null.
      */
-    String printDate(java.util.Calendar val);
+    String printDate(java.time.ZonedDateTime val);
 
     /**
      * Converts a string value into a string.

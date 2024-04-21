@@ -31,14 +31,14 @@ import javax.xml.namespace.NamespaceContext;
  * {@snippet :
  *  // Customized parse method
  *  public long myParseCal( String dateTimeString ) {
- *      java.util.Calendar cal = DatatypeConverter.parseDateTime(dateTimeString);
- *      long longval = convert_calendar_to_long(cal); //application specific
+ *      java.time.ZonedDateTime cal = DatatypeConverter.parseDateTime(dateTimeString);
+ *      long longval = convert_ZonedDateTime_to_long(cal); //application specific
  *      return longval;
  *  }
  *
  *  // Customized print method
  *  public String myPrintCal( Long longval ) {
- *      java.util.Calendar cal = convert_long_to_calendar(longval) ; //application specific
+ *      java.time.ZonedDateTime cal = convert_long_to_ZonedDateTime(longval) ; //application specific
  *      String dateTimeString = DatatypeConverter.printDateTime(cal);
  *      return dateTimeString;
  *  }
@@ -296,15 +296,15 @@ final public class DatatypeConverter {
 
     /**
      * <p>
-     * Converts the string argument into a Calendar value.
+     * Converts the string argument into a ZonedDateTime value.
      * @param lexicalXSDDateTime
      *     A string containing lexical representation of
      *     xsd:datetime.
      * @return
-     *     A Calendar object represented by the string argument.
+     *     A ZonedDateTime object represented by the string argument.
      * @throws IllegalArgumentException if string parameter does not conform to lexical value space defined in XML Schema Part 2: Datatypes for xsd:dateTime.
      */ 
-    public static java.util.Calendar parseDateTime( String lexicalXSDDateTime ) {
+    public static java.time.ZonedDateTime parseDateTime( String lexicalXSDDateTime ) {
         if (theConverter == null) initConverter();
         return theConverter.parseDateTime( lexicalXSDDateTime );
     }
@@ -371,29 +371,29 @@ final public class DatatypeConverter {
 
     /**
      * <p>
-     * Converts the string argument into a Calendar value.
+     * Converts the string argument into a ZonedDateTime value.
      * @param lexicalXSDTime
      *     A string containing lexical representation of
      *     xsd:time.
      * @return
-     *     A Calendar value represented by the string argument.
+     *     A ZonedDateTime value represented by the string argument.
      * @throws IllegalArgumentException if string parameter does not conform to lexical value space defined in XML Schema Part 2: Datatypes for xsd:Time.
      */ 
-    public static java.util.Calendar parseTime( String lexicalXSDTime ) {
+    public static java.time.ZonedDateTime parseTime( String lexicalXSDTime ) {
         if (theConverter == null) initConverter();
         return theConverter.parseTime( lexicalXSDTime ); 
     }
     /**
      * <p>
-     * Converts the string argument into a Calendar value.
+     * Converts the string argument into a ZonedDateTime value.
      * @param lexicalXSDDate
      *      A string containing lexical representation of
      *     xsd:Date.
      * @return
-     *     A Calendar value represented by the string argument.
+     *     A ZonedDateTime value represented by the string argument.
      * @throws IllegalArgumentException if string parameter does not conform to lexical value space defined in XML Schema Part 2: Datatypes for xsd:Date.
      */ 
-    public static java.util.Calendar parseDate( String lexicalXSDDate ) {
+    public static java.time.ZonedDateTime parseDate( String lexicalXSDDate ) {
         if (theConverter == null) initConverter();
         return theConverter.parseDate( lexicalXSDDate );
     }
@@ -568,14 +568,14 @@ final public class DatatypeConverter {
 
     /**
      * <p>
-     * Converts a Calendar value into a string.
+     * Converts a ZonedDateTime value into a string.
      * @param val
-     *     A Calendar value
+     *     A ZonedDateTime value
      * @return
      *     A string containing a lexical representation of xsd:dateTime
      * @throws IllegalArgumentException if {@code val} is null.
      */ 
-    public static String printDateTime( java.util.Calendar val ) {
+    public static String printDateTime( java.time.ZonedDateTime val ) {
         if (theConverter == null) initConverter();
         return theConverter.printDateTime( val );
     }
@@ -636,28 +636,28 @@ final public class DatatypeConverter {
 
     /**
      * <p>
-     * Converts a Calendar value into a string.
+     * Converts a ZonedDateTime value into a string.
      * @param val
-     *     A Calendar value
+     *     A ZonedDateTime value
      * @return
      *     A string containing a lexical representation of xsd:time
      * @throws IllegalArgumentException if {@code val} is null.
      */ 
-    public static String printTime( java.util.Calendar val ) {
+    public static String printTime( java.time.ZonedDateTime val ) {
         if (theConverter == null) initConverter();
         return theConverter.printTime( val );
     }
 
     /**
      * <p>
-     * Converts a Calendar value into a string.
+     * Converts a ZonedDateTime value into a string.
      * @param val
-     *     A Calendar value
+     *     A ZonedDateTime value
      * @return
      *     A string containing a lexical representation of xsd:date
      * @throws IllegalArgumentException if {@code val} is null.
      */ 
-    public static String printDate( java.util.Calendar val ) {
+    public static String printDate( java.time.ZonedDateTime val ) {
         if (theConverter == null) initConverter();
         return theConverter.printDate( val );
     }
